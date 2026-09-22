@@ -1,0 +1,50 @@
+<div class="auth-page">
+  <div class="auth-decor auth-decor-a"></div>
+  <div class="auth-decor auth-decor-b"></div>
+
+  <div class="auth-content">
+    <div class="auth-wordmark">EduReviews</div>
+
+    <div class="auth-card">
+      <div class="auth-card-header">
+        <h1>Присоединяйся</h1>
+        <p>Честные отзывы о курсах и преподавателях</p>
+      </div>
+
+      <% if @user.errors.any? %>
+        <div class="auth-errors">
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+        <%= f.label :name, "Имя и фамилия", class: "sr-only" %>
+        <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+
+        <%= f.label :email, "Университетская почта", class: "sr-only" %>
+        <%= f.email_field :email, placeholder: "Университетская почта", class: "auth-input", required: true %>
+
+        <%= f.label :password, "Пароль", class: "sr-only" %>
+        <%= f.password_field :password, placeholder: "Пароль", class: "auth-input", required: true %>
+
+        <%= f.label :password_confirmation, "Повторите пароль", class: "sr-only" %>
+        <%= f.password_field :password_confirmation, placeholder: "Повторите пароль", class: "auth-input", required: true %>
+
+        <label class="auth-checkbox">
+          <%= check_box_tag :agree, "1", false, required: true %>
+          Согласен(на) с правилами модерации отзывов
+        </label>
+
+        <%= f.submit "Создать аккаунт →", class: "btn-primary" %>
+      <% end %>
+
+      <div class="auth-footer">
+        Уже есть аккаунт? <%= link_to "Войти", new_session_path %>
+      </div>
+    </div>
+  </div>
+</div>

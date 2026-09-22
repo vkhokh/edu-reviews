@@ -1,0 +1,224 @@
+/*
+  Единый стиль для всего приложения EduReviews — синяя современная палитра,
+  выбранная для чек-поинта 1 (экраны входа/регистрации).
+  Шрифты (Space Grotesk + Work Sans) подключаются в layout через Google Fonts.
+*/
+
+:root {
+  --edu-primary: #2F5FE0;
+  --edu-primary-dark: #244DBF;
+  --edu-secondary: #FFB020;
+  --edu-bg: #F5F7FF;
+  --edu-input-bg: #ECF0FF;
+  --edu-text: #141B33;
+  --edu-text-muted: #6B7290;
+  --edu-card-shadow: 0 20px 40px rgba(47, 95, 224, 0.14);
+}
+
+body {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  color: var(--edu-text);
+  background: var(--edu-bg);
+}
+
+a {
+  color: var(--edu-primary);
+}
+
+/* === Flash-сообщения (используются в layout) === */
+.flash {
+  margin: 0;
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Work Sans", sans-serif;
+}
+
+.flash-notice {
+  background: #E9F7EF;
+  color: #1E8A4C;
+}
+
+.flash-alert {
+  background: #FDECEC;
+  color: #B3261E;
+}
+
+/* === Экраны входа / регистрации === */
+.auth-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.auth-decor {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.auth-decor-a {
+  top: -120px;
+  right: -120px;
+  width: 340px;
+  height: 340px;
+  background: var(--edu-primary);
+  opacity: 0.10;
+}
+
+.auth-decor-b {
+  bottom: -100px;
+  left: -100px;
+  width: 260px;
+  height: 260px;
+  background: var(--edu-secondary);
+  opacity: 0.16;
+}
+
+.auth-content {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 32px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-wordmark {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--edu-primary);
+  margin-bottom: 24px;
+}
+
+.auth-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-shadow: var(--edu-card-shadow);
+  padding: 32px 28px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.auth-card-header h1 {
+  margin: 0 0 6px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--edu-text);
+}
+
+.auth-card-header p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--edu-text-muted);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-input {
+  font-family: "Work Sans", sans-serif;
+  font-size: 15px;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 12px;
+  background: var(--edu-input-bg);
+  color: var(--edu-text);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.auth-input::placeholder {
+  color: var(--edu-text-muted);
+}
+
+.auth-input:focus {
+  outline: 2px solid var(--edu-primary);
+  outline-offset: 2px;
+}
+
+.auth-forgot {
+  align-self: flex-end;
+  font-size: 13px;
+  color: var(--edu-text-muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-checkbox {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 12px;
+  color: var(--edu-text-muted);
+}
+
+.btn-primary {
+  margin-top: 2px;
+  padding: 15px;
+  background: var(--edu-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 999px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--edu-primary-dark);
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--edu-text-muted);
+}
+
+.auth-footer a {
+  color: var(--edu-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-errors {
+  background: #FDECEC;
+  border: 1px solid #F5B5B5;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #B3261E;
+}
+
+.auth-errors ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+/* Видно программам чтения с экрана, скрыто визуально — поля остаются
+   доступными, при этом дизайн держится на плейсхолдерах, как в макете. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

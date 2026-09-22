@@ -1,0 +1,34 @@
+<!--
+  Это ПРИМЕР layout'а, а не файл для слепой замены — у тебя уже есть
+  app/views/layouts/application.html.erb, созданный `rails new`.
+  Перенеси в свой файл только то, чего там ещё нет:
+    1. <link> на шрифты Google Fonts внутри <head>
+    2. stylesheet_link_tag на app/assets/stylesheets/auth.css (или его
+       содержимое, если у тебя один общий application.css)
+    3. блок с flash-сообщениями перед <%= yield %>
+-->
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>EduReviews</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <% if notice %>
+      <p class="flash flash-notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="flash flash-alert"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<div class="auth-page">
+  <div class="auth-decor auth-decor-a"></div>
+  <div class="auth-decor auth-decor-b"></div>
+
+  <div class="auth-content">
+    <div class="auth-wordmark">EduReviews</div>
+
+    <div class="auth-card">
+      <div class="auth-card-header">
+        <h1>С возвращением!</h1>
+        <p>Войдите, чтобы оценить курс</p>
+      </div>
+
+      <% if flash[:alert] %>
+        <div class="auth-errors">
+          <ul>
+            <li><%= flash[:alert] %></li>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= form_with url: session_path, method: :post, scope: :session, local: true, class: "auth-form" do |f| %>
+        <%= f.label :email, "Университетская почта", class: "sr-only" %>
+        <%= f.email_field :email, placeholder: "Университетская почта", class: "auth-input", required: true, autofocus: true %>
+
+        <%= f.label :password, "Пароль", class: "sr-only" %>
+        <%= f.password_field :password, placeholder: "Пароль", class: "auth-input", required: true %>
+
+        <%= link_to "Забыли пароль?", "#", class: "auth-forgot" %>
+
+        <%= f.submit "Войти →", class: "btn-primary" %>
+      <% end %>
+
+      <div class="auth-footer">
+        Нет аккаунта? <%= link_to "Создать", new_registration_path %>
+      </div>
+    </div>
+  </div>
+</div>
