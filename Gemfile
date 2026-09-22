@@ -5,7 +5,7 @@ gem "rails", "~> 8.1.3", ">= 8.1.3.1"
 
 # Закреплено вручную: json 3.0.x несовместим с тем, как activesupport 8.1.3.1
 # вызывает JSON.parse при расшифровке session-кук (ломает вход/flash на Windows).
-gem "json", "~> 2.9"
+gem "json", "~> 3.0"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
