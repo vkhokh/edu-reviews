@@ -1,0 +1,984 @@
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='AuthScreensCheckpoint1'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AuthScreensCheckpoint1'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AuthScreensCheckpoint1'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AuthScreensCheckpoint1'*/[0m
+Started GET "/" for 127.0.0.1 at 2026-09-22 15:27:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AuthScreensCheckpoint1'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260921120000_create_users.rb
+
+
+):
+  
+activerecord (8.1.3.1) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3.1) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3.1) lib/active_support/file_update_checker.rb:88:in `execute'
+activerecord (8.1.3.1) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.1.3.1) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3.1) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3.1) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.7) lib/rack/method_override.rb:28:in `call'
+rack (3.2.7) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.7) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3.1) lib/rails/engine.rb:534:in `call'
+puma (8.0.2) lib/puma/configuration.rb:305:in `call'
+puma (8.0.2) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.2) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.2) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.2) lib/puma/server.rb:508:in `process_client'
+puma (8.0.2) lib/puma/server.rb:263:in `block in run'
+puma (8.0.2) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:27:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AuthScreensCheckpoint1'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260921120000_create_users.rb
+
+
+):
+  
+activerecord (8.1.3.1) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3.1) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3.1) lib/active_support/file_update_checker.rb:88:in `execute'
+activerecord (8.1.3.1) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.1.3.1) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3.1) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3.1) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.7) lib/rack/method_override.rb:28:in `call'
+rack (3.2.7) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.7) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3.1) lib/rails/engine.rb:534:in `call'
+puma (8.0.2) lib/puma/configuration.rb:305:in `call'
+puma (8.0.2) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.2) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.2) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.2) lib/puma/server.rb:508:in `process_client'
+puma (8.0.2) lib/puma/server.rb:263:in `block in run'
+puma (8.0.2) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='AuthScreensCheckpoint1'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-09-22 12:28:27.267048', '2026-09-22 12:28:27.267051') RETURNING "key" /*application='AuthScreensCheckpoint1'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AuthScreensCheckpoint1'*/[0m
+Migrating to CreateUsers (20260921120000)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='AuthScreensCheckpoint1'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='AuthScreensCheckpoint1'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='AuthScreensCheckpoint1'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260921120000') RETURNING "version" /*application='AuthScreensCheckpoint1'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='AuthScreensCheckpoint1'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AuthScreensCheckpoint1'*/[0m
+Started GET "/" for 127.0.0.1 at 2026-09-22 15:29:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AuthScreensCheckpoint1'*/[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 12.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | GC: 0.0ms)
+Completed 200 OK in 132ms (Views: 43.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2026-09-22 15:29:59 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"Войти →"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+json (3.0.2) lib/json/common.rb:296:in `parse'
+activesupport (8.1.3.1) lib/active_support/json/decoding.rb:25:in `decode'
+activesupport (8.1.3.1) lib/active_support/messages/metadata.rb:129:in `deserialize_from_json'
+activesupport (8.1.3.1) lib/active_support/messages/metadata.rb:45:in `deserialize_with_metadata'
+activesupport (8.1.3.1) lib/active_support/message_encryptor.rb:261:in `read_message'
+activesupport (8.1.3.1) lib/active_support/messages/rotator.rb:33:in `block in read_message'
+activesupport (8.1.3.1) lib/active_support/messages/rotator.rb:61:in `block (2 levels) in catch_rotation_error'
+activesupport (8.1.3.1) lib/active_support/messages/rotator.rb:60:in `catch'
+activesupport (8.1.3.1) lib/active_support/messages/rotator.rb:60:in `block in catch_rotation_error'
+activesupport (8.1.3.1) lib/active_support/messages/rotator.rb:59:in `catch'
+activesupport (8.1.3.1) lib/active_support/messages/rotator.rb:59:in `catch_rotation_error'
+activesupport (8.1.3.1) lib/active_support/messages/rotator.rb:32:in `read_message'
+activesupport (8.1.3.1) lib/active_support/message_encryptor.rb:245:in `block (3 levels) in decrypt_and_verify'
+activesupport (8.1.3.1) lib/active_support/messages/codec.rb:47:in `block in catch_and_ignore'
+activesupport (8.1.3.1) lib/active_support/messages/codec.rb:46:in `catch'
+activesupport (8.1.3.1) lib/active_support/messages/codec.rb:46:in `catch_and_ignore'
+activesupport (8.1.3.1) lib/active_support/message_encryptor.rb:244:in `block (2 levels) in decrypt_and_verify'
+activesupport (8.1.3.1) lib/active_support/messages/codec.rb:54:in `block in catch_and_raise'
+activesupport (8.1.3.1) lib/active_support/messages/codec.rb:53:in `catch'
+activesupport (8.1.3.1) lib/active_support/messages/codec.rb:53:in `catch_and_raise'
+activesupport (8.1.3.1) lib/active_support/message_encryptor.rb:243:in `block in decrypt_and_verify'
+activesupport (8.1.3.1) lib/active_support/messages/codec.rb:54:in `block in catch_and_raise'
+activesupport (8.1.3.1) lib/active_support/messages/codec.rb:53:in `catch'
+activesupport (8.1.3.1) lib/active_support/messages/codec.rb:53:in `catch_and_raise'
+activesupport (8.1.3.1) lib/active_support/message_encryptor.rb:242:in `decrypt_and_verify'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/cookies.rb:689:in `parse'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/cookies.rb:515:in `[]'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/session/cookie_store.rb:121:in `get_cookie'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/session/cookie_store.rb:96:in `block (2 levels) in unpacked_cookie_data'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/session/abstract_store.rb:55:in `stale_session_check!'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/session/cookie_store.rb:95:in `block in unpacked_cookie_data'
+rack (3.2.7) lib/rack/request.rb:112:in `fetch'
+rack (3.2.7) lib/rack/request.rb:112:in `fetch_header'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/session/cookie_store.rb:94:in `unpacked_cookie_data'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/session/cookie_store.rb:88:in `block in extract_session_id'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/session/abstract_store.rb:55:in `stale_session_check!'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/session/cookie_store.rb:87:in `extract_session_id'
+actionpack (8.1.3.1) lib/action_dispatch/request/session.rb:67:in `block in id'
+actionpack (8.1.3.1) lib/action_dispatch/request/session.rb:66:in `fetch'
+actionpack (8.1.3.1) lib/action_dispatch/request/session.rb:66:in `id'
+actionpack (8.1.3.1) lib/action_dispatch/request/session.rb:88:in `id'
+rack-session (2.1.2) lib/rack/session/abstract/id.rb:337:in `current_session_id'
+rack-session (2.1.2) lib/rack/session/abstract/id.rb:343:in `session_exists?'
+actionpack (8.1.3.1) lib/action_dispatch/request/session.rb:233:in `exists?'
+actionpack (8.1.3.1) lib/action_dispatch/request/session.rb:256:in `load_for_read!'
+actionpack (8.1.3.1) lib/action_dispatch/request/session.rb:115:in `[]'
+actionpack (8.1.3.1) lib/action_controller/metal/request_forgery_protection.rb:328:in `fetch'
+actionpack (8.1.3.1) lib/action_controller/metal/request_forgery_protection.rb:577:in `block in real_csrf_token'
+actionpack (8.1.3.1) lib/action_controller/metal/request_forgery_protection.rb:576:in `fetch'
+actionpack (8.1.3.1) lib/action_controller/metal/request_forgery_protection.rb:576:in `real_csrf_token'
+actionpack (8.1.3.1) lib/action_controller/metal/request_forgery_protection.rb:597:in `csrf_token_hmac'
+actionpack (8.1.3.1) lib/action_controller/metal/request_forgery_protection.rb:591:in `global_csrf_token'
+actionpack (8.1.3.1) lib/action_controller/metal/request_forgery_protection.rb:558:in `compare_with_global_token'
+actionpack (8.1.3.1) lib/action_controller/metal/request_forgery_protection.rb:531:in `valid_authenticity_token?'
+actionpack (8.1.3.1) lib/action_controller/metal/request_forgery_protection.rb:478:in `block in any_authenticity_token_valid?'
+actionpack (8.1.3.1) lib/action_controller/metal/request_forgery_protection.rb:477:in `any?'
+actionpack (8.1.3.1) lib/action_controller/metal/request_forgery_protection.rb:477:in `any_authenticity_token_valid?'
+actionpack (8.1.3.1) lib/action_controller/metal/request_forgery_protection.rb:472:in `verified_request?'
+actionpack (8.1.3.1) lib/action_controller/metal/request_forgery_protection.rb:401:in `verify_authenticity_token'
+activesupport (8.1.3.1) lib/active_support/callbacks.rb:362:in `block in make_lambda'
+activesupport (8.1.3.1) lib/active_support/callbacks.rb:179:in `block in call'
+actionpack (8.1.3.1) lib/abstract_controller/callbacks.rb:36:in `block (2 levels) in <module:Callbacks>'
+activesupport (8.1.3.1) lib/active_support/callbacks.rb:180:in `call'
+activesupport (8.1.3.1) lib/active_support/callbacks.rb:560:in `block in invoke_before'
+activesupport (8.1.3.1) lib/active_support/callbacks.rb:560:in `each'
+activesupport (8.1.3.1) lib/active_support/callbacks.rb:560:in `invoke_before'
+activesupport (8.1.3.1) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+activesupport (8.1.3.1) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (8.1.3.1) lib/abstract_controller/callbacks.rb:266:in `process_action'
+actionpack (8.1.3.1) lib/action_controller/metal/rescue.rb:36:in `process_action'
+actionpack (8.1.3.1) lib/action_controller/metal/instrumentation.rb:76:in `block in process_action'
+activesupport (8.1.3.1) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (8.1.3.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (8.1.3.1) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (8.1.3.1) lib/action_controller/metal/instrumentation.rb:75:in `process_action'
+actionpack (8.1.3.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (8.1.3.1) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (8.1.3.1) lib/abstract_controller/base.rb:154:in `process'
+actionview (8.1.3.1) lib/action_view/rendering.rb:40:in `process'
+actionpack (8.1.3.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (8.1.3.1) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (8.1.3.1) lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+actionpack (8.1.3.1) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (8.1.3.1) lib/action_dispatch/journey/router.rb:35:in `block in serve'
+actionpack (8.1.3.1) lib/action_dispatch/journey/router.rb:86:in `block in recognize'
+actionpack (8.1.3.1) lib/action_dispatch/journey/router.rb:66:in `each'
+actionpack (8.1.3.1) lib/action_dispatch/journey/router.rb:66:in `recognize'
+actionpack (8.1.3.1) lib/action_dispatch/journey/router.rb:31:in `serve'
+actionpack (8.1.3.1) lib/action_dispatch/routing/route_set.rb:906:in `call'
+railties (8.1.3.1) lib/rails/engine/lazy_route_set.rb:60:in `call'
+rack (3.2.7) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.2.7) lib/rack/etag.rb:29:in `call'
+rack (3.2.7) lib/rack/conditional_get.rb:44:in `call'
+rack (3.2.7) lib/rack/head.rb:15:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.2) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.2) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/cookies.rb:708:in `call'
+activerecord (8.1.3.1) lib/active_record/migration.rb:671:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3.1) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.7) lib/rack/method_override.rb:28:in `call'
+rack (3.2.7) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.7) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3.1) lib/rails/engine.rb:534:in `call'
+puma (8.0.2) lib/puma/configuration.rb:305:in `call'
+puma (8.0.2) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.2) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.2) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.2) lib/puma/server.rb:508:in `process_client'
+puma (8.0.2) lib/puma/server.rb:263:in `block in run'
+puma (8.0.2) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:29:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:30:01 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 2.7ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", class: "sr-only" %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", class: "sr-only" %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:30:02 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:30:09 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", class: "sr-only" %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", class: "sr-only" %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:30:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:30:34 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", class: "sr-only" %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", class: "sr-only" %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:30:34 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:31:23 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", class: "sr-only" %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", class: "sr-only" %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:31:23 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:34:25 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", { class: "sr-only" } %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:34:25 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:34:39 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", { class: "sr-only" } %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:34:39 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:34:41 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", { class: "sr-only" } %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:34:41 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:34:41 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", { class: "sr-only" } %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:34:41 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:35:43 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", { class: "sr-only" } %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:35:44 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:35:45 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", { class: "sr-only" } %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:35:45 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:42:46 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AuthScreensCheckpoint1'*/[0m
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 41.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 390ms (ActiveRecord: 2.4ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", { class: "sr-only" } %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:42:47 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:43:00 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", { class: "sr-only" } %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:43:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2026-09-22 15:43:08 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    12:       </div>
+    13: 
+    14:       <% if flash[:alert] %>
+    15:         <div class="auth-errors">
+    16:           <ul>
+    17:             <li><%= flash[:alert] %></li>
+    18:           </ul>
+  
+app/views/sessions/new.html.erb:15
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/sessions/new.html.erb:15
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:43:08 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2026-09-22 15:43:10 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    12:       </div>
+    13: 
+    14:       <% if flash[:alert] %>
+    15:         <div class="auth-errors">
+    16:           <ul>
+    17:             <li><%= flash[:alert] %></li>
+    18:           </ul>
+  
+app/views/sessions/new.html.erb:15
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/sessions/new.html.erb:15
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:43:11 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:43:16 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", { class: "sr-only" } %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:43:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:43:23 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", { class: "sr-only" } %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:43:23 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:43:24 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", { class: "sr-only" } %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:43:24 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  Rendering registrations/new.html.erb
+  Rendered registrations/new.html.erb (Duration: 22.3ms | GC: 0.0ms)
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:50:26 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2026-09-22 15:50:39 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    12:       </div>
+    13: 
+    14:       <% if flash[:alert] %>
+    15:         <div class="auth-errors">
+    16:           <ul>
+    17:             <li><%= flash[:alert] %></li>
+    18:           </ul>
+  
+app/views/sessions/new.html.erb:15
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/sessions/new.html.erb:15
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:50:39 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/registration/new" for 127.0.0.1 at 2026-09-22 15:51:09 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    22:       <% end %>
+    23: 
+    24:       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
+    25:         <%= f.label :name, "Имя и фамилия", { class: "sr-only" } %>
+    26:         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
+    27: 
+    28:         <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
+  
+app/views/registrations/new.html.erb:25
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/registrations/new.html.erb:25
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:51:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/session/new" for 127.0.0.1 at 2026-09-22 15:51:56 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    12:       </div>
+    13: 
+    14:       <% if flash[:alert] %>
+    15:         <div class="auth-errors">
+    16:           <ul>
+    17:             <li><%= flash[:alert] %></li>
+    18:           </ul>
+  
+app/views/sessions/new.html.erb:15
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/sessions/new.html.erb:15
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:51:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: www.example.com
+Started GET "/session/new" for 127.0.0.1 at 2026-09-22 15:55:58 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='AuthScreensCheckpoint1'*/[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+rescue_from handled ActionView::Template::Error (wrong number of arguments (given 2, expected 1)) - C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/json-3.0.2/lib/json/common.rb:296:in `parse'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    12:       </div>
+    13: 
+    14:       <% if flash[:alert] %>
+    15:         <div class="auth-errors">
+    16:           <ul>
+    17:             <li><%= flash[:alert] %></li>
+    18:           </ul>
+  
+app/views/sessions/new.html.erb:15
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/sessions/new.html.erb:15
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:55:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/session/new" for 127.0.0.1 at 2026-09-22 15:56:13 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+rescue_from handled ActionView::Template::Error (wrong number of arguments (given 2, expected 1)) - C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/json-3.0.2/lib/json/common.rb:296:in `parse'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 1))
+Caused by: ArgumentError (wrong number of arguments (given 2, expected 1))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 2, expected 1)):
+    12:       </div>
+    13: 
+    14:       <% if flash[:alert] %>
+    15:         <div class="auth-errors">
+    16:           <ul>
+    17:             <li><%= flash[:alert] %></li>
+    18:           </ul>
+  
+app/views/sessions/new.html.erb:15
+
+Information for cause: ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/views/sessions/new.html.erb:15
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-09-22 15:56:13 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  

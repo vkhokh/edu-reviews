@@ -22,16 +22,16 @@
       <% end %>
 
       <%= form_with model: @user, url: registration_path, local: true, class: "auth-form" do |f| %>
-        <%= f.label :name, "Имя и фамилия", class: "sr-only" %>
+        <%= f.label :name, "Имя и фамилия", { class: "sr-only" } %>
         <%= f.text_field :name, placeholder: "Имя и фамилия", class: "auth-input", required: true, autofocus: true %>
 
-        <%= f.label :email, "Университетская почта", class: "sr-only" %>
+        <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
         <%= f.email_field :email, placeholder: "Университетская почта", class: "auth-input", required: true %>
 
-        <%= f.label :password, "Пароль", class: "sr-only" %>
+        <%= f.label :password, "Пароль", { class: "sr-only" } %>
         <%= f.password_field :password, placeholder: "Пароль", class: "auth-input", required: true %>
 
-        <%= f.label :password_confirmation, "Повторите пароль", class: "sr-only" %>
+        <%= f.label :password_confirmation, "Повторите пароль", { class: "sr-only" } %>
         <%= f.password_field :password_confirmation, placeholder: "Повторите пароль", class: "auth-input", required: true %>
 
         <label class="auth-checkbox">

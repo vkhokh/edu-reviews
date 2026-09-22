@@ -20,10 +20,10 @@
       <% end %>
 
       <%= form_with url: session_path, method: :post, scope: :session, local: true, class: "auth-form" do |f| %>
-        <%= f.label :email, "Университетская почта", class: "sr-only" %>
+        <%= f.label :email, "Университетская почта", { class: "sr-only" } %>
         <%= f.email_field :email, placeholder: "Университетская почта", class: "auth-input", required: true, autofocus: true %>
 
-        <%= f.label :password, "Пароль", class: "sr-only" %>
+        <%= f.label :password, "Пароль", { class: "sr-only" } %>
         <%= f.password_field :password, placeholder: "Пароль", class: "auth-input", required: true %>
 
         <%= link_to "Забыли пароль?", "#", class: "auth-forgot" %>
