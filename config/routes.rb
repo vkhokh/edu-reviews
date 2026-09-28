@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resource :registration, only: %i[new create]
   resource :session,      only: %i[new create destroy]
 
+  # --- Главная страница ---
+  get "home", to: "pages#home"
+
   # Defines the root path route ("/")
-  root to: "sessions#new" # временно, пока нет каталога преподавателей
+  root to: "pages#home"
 end

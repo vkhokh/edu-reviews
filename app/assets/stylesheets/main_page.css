@@ -1,0 +1,212 @@
+/*
+  Стили главной страницы EduReviews (каталог/hero/отзывы/футер).
+  Переиспользует переменные и компоненты из auth.css (--edu-primary,
+  --edu-text, .auth-decor, .auth-input, .btn-primary и т.д.), чтобы
+  главная страница была в той же палитре, что и экраны входа/регистрации.
+*/
+
+:root {
+  --edu-success: #1E8A4C;
+  --edu-danger: #B3261E;
+  --edu-star: #FFB020;
+  --edu-border: #DCE3FA;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-family: "Space Grotesk", sans-serif;
+  margin: 0;
+}
+
+/* ---------- Карточки-поверхности ---------- */
+
+.card {
+  background: #FFFFFF;
+  border: 1px solid var(--edu-border);
+  border-radius: 20px;
+  box-shadow: var(--edu-card-shadow);
+  box-sizing: border-box;
+}
+
+/* ---------- Шапка сайта ---------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+}
+
+.site-logo {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--edu-text);
+  text-decoration: none;
+}
+.site-logo span { color: var(--edu-secondary); }
+
+.nav-links { display: flex; align-items: center; gap: 30px; }
+.nav-links a {
+  color: var(--edu-text-muted);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+}
+.nav-links a:hover { color: var(--edu-text); }
+
+.btn-ghost {
+  padding: 12px 18px;
+  background: transparent;
+  border: none;
+  color: var(--edu-text-muted);
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-ghost:hover { color: var(--edu-text); }
+
+/* .btn-primary уже описан в auth.css — переиспользуем как есть,
+   он также применяется здесь и как <a>, и как <button>. */
+a.btn-primary { display: inline-flex; align-items: center; text-decoration: none; }
+
+/* ---------- Секции ---------- */
+
+.section { padding: 72px 0; }
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--edu-secondary);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: 56px 0 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+.hero-search {
+  width: 100%;
+  max-width: 620px;
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.hero-search .auth-input { border-radius: 12px; }
+.hero-stats { display: flex; gap: 40px; margin-top: 20px; }
+.hero-stat-value {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--edu-text);
+}
+.hero-stat-label { font-size: 13px; color: var(--edu-text-muted); }
+
+/* ---------- Бейджи, теги, рейтинг ---------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.badge-neutral { background: var(--edu-input-bg); color: var(--edu-primary); }
+
+.tag {
+  display: inline-flex;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--edu-input-bg);
+  color: var(--edu-primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--edu-text);
+}
+.rating-stars { color: var(--edu-star); font-size: 15px; letter-spacing: 1px; }
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--edu-input-bg);
+  color: var(--edu-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+/* ---------- Карточки курса / отзыва ---------- */
+
+.course-card, .review-card {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: box-shadow .2s, transform .2s;
+}
+.course-card:hover { transform: translateY(-2px); }
+.course-card h3, .review-card h3 { font-size: 18px; }
+
+/* ---------- Футер ---------- */
+
+.site-footer {
+  background: var(--edu-text);
+  color: #C7CBE6;
+  padding: 56px 0 32px;
+  margin-top: 0;
+}
+.site-footer a { color: #DDE1F5; text-decoration: none; font-size: 14px; }
+.site-footer a:hover { color: #ffffff; }
+.footer-heading {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-note { margin-top: 40px; font-size: 13px; color: #9096B8; }
