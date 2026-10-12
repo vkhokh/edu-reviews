@@ -1,0 +1,13 @@
+# == Фикстуры пользователей ==
+# password_digest считается напрямую через BCrypt, т.к. фикстуры
+# загружаются в базу напрямую (минуя has_secure_password/валидации).
+
+alice:
+  name: Алиса Иванова
+  email: alice@example.com
+  password_digest: <%= BCrypt::Password.create("secret123") %>
+
+bob:
+  name: Борис Петров
+  email: bob@example.com
+  password_digest: <%= BCrypt::Password.create("secret123") %>
