@@ -1,0 +1,51 @@
+<div class="auth-page">
+  <div class="auth-decor auth-decor-a"></div>
+  <div class="auth-decor auth-decor-b"></div>
+
+  <div class="auth-content">
+    <div class="auth-wordmark">EduReviews</div>
+
+    <div class="auth-card">
+      <div class="auth-card-header">
+        <h1>Оставить отзыв</h1>
+        <p>Расскажи честно, как прошёл курс у преподавателя</p>
+      </div>
+
+      <% if @review.errors.any? %>
+        <div class="auth-errors">
+          <ul>
+            <% @review.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= form_with model: @review, url: reviews_path, local: true, class: "auth-form" do |f| %>
+        <%= f.label :teacher_id, "Преподаватель", { class: "sr-only" } %>
+        <%= f.collection_select :teacher_id, @teachers, :id, :name,
+              { prompt: "Выберите преподавателя" },
+              { class: "auth-input", required: true } %>
+
+        <%= f.label :rating, "Оценка", { class: "sr-only" } %>
+        <%= f.select :rating,
+              options_for_select(
+                [["5 — отлично", 5], ["4 — хорошо", 4], ["3 — нормально", 3], ["2 — плохо", 2], ["1 — ужасно", 1]],
+                f.object.rating
+              ),
+              { prompt: "Оцените от 1 до 5" },
+              { class: "auth-input", required: true } %>
+
+        <%= f.label :body, "Текст отзыва", { class: "sr-only" } %>
+        <%= f.text_area :body, placeholder: "Что понравилось или не понравилось? Как объясняет материал, принимает экзамен, какая нагрузка?",
+              class: "auth-input", rows: 6, required: true, minlength: 10 %>
+
+        <%= f.submit "Отправить отзыв →", class: "btn-primary" %>
+      <% end %>
+
+      <div class="auth-footer">
+        <%= link_to "← Вернуться на главную", root_path %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,6 +10,7 @@
 #   - валидацию присутствия пароля при создании записи
 class User < ApplicationRecord
   has_secure_password
+  has_many :reviews, dependent: :destroy
 
   before_save { self.email = email.to_s.strip.downcase }
 

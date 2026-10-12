@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resource :registration, only: %i[new create]
   resource :session,      only: %i[new create destroy]
 
+  # --- Отзывы ---
+  resources :reviews, only: %i[new create]
+
   # --- Главная страница ---
   get "home", to: "pages#home"
 

@@ -15,8 +15,13 @@
       </nav>
 
       <div style="display: flex; align-items: center; gap: 10px;">
-        <%= link_to "Войти", new_session_path, class: "btn-ghost" %>
-        <%= link_to "Создать аккаунт →", new_registration_path, class: "btn-primary" %>
+        <% if logged_in? %>
+          <%= link_to "Оставить отзыв", new_review_path, class: "btn-ghost" %>
+          <%= button_to "Выйти", session_path, method: :delete, class: "btn-primary", form: { style: "display:inline" } %>
+        <% else %>
+          <%= link_to "Войти", new_session_path, class: "btn-ghost" %>
+          <%= link_to "Создать аккаунт →", new_registration_path, class: "btn-primary" %>
+        <% end %>
       </div>
     </div>
 
