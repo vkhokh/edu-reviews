@@ -3,27 +3,7 @@
   <div class="auth-decor" style="width: 380px; height: 380px; background: var(--edu-secondary); top: -180px; right: -140px; opacity: 0.14;"></div>
 
   <div class="container" style="position: relative; z-index: 1;">
-    <div class="site-header">
-      <%= link_to root_path, class: "site-logo" do %>
-        Edu<span>Reviews</span>
-      <% end %>
-
-      <nav class="nav-links">
-        <%= link_to "Курсы", "#catalog" %>
-        <%= link_to "Преподаватели", "#catalog" %>
-        <%= link_to "Университеты", "#catalog" %>
-      </nav>
-
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <% if logged_in? %>
-          <%= link_to "Оставить отзыв", new_review_path, class: "btn-ghost" %>
-          <%= button_to "Выйти", session_path, method: :delete, class: "btn-primary", form: { style: "display:inline" } %>
-        <% else %>
-          <%= link_to "Войти", new_session_path, class: "btn-ghost" %>
-          <%= link_to "Создать аккаунт →", new_registration_path, class: "btn-primary" %>
-        <% end %>
-      </div>
-    </div>
+    <%= render "shared/header" %>
 
     <div class="hero-inner">
       <div class="eyebrow">EduReviews · честные отзывы студентов</div>

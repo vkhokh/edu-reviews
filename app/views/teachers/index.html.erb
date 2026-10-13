@@ -1,0 +1,41 @@
+<div class="hero" style="padding-bottom: 0;">
+  <div class="container" style="position: relative; z-index: 1;">
+    <%= render "shared/header" %>
+  </div>
+</div>
+
+<div class="section" style="padding-top: 32px;">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Каталог</div>
+      <h1 style="font-size: 36px;">Преподаватели</h1>
+      <p style="color: var(--edu-text-muted); font-size: 16px;">Средняя оценка и количество отзывов студентов</p>
+      <% if logged_in? %>
+        <%= link_to "+ Добавить преподавателя", new_teacher_path, class: "btn-primary" %>
+      <% end %>
+    </div>
+
+    <% if @teachers.empty? %>
+      <p style="text-align: center; color: var(--edu-text-muted);">Преподавателей пока нет.</p>
+    <% else %>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px;">
+        <% @teachers.each do |teacher| %>
+          <div class="card course-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <span class="badge badge-neutral"><%= teacher.department %></span>
+              <% if teacher.average_rating %>
+                <span class="rating"><span class="rating-stars">★</span><%= teacher.average_rating %></span>
+              <% else %>
+                <span style="font-size: 13px; color: var(--edu-text-muted);">нет оценок</span>
+              <% end %>
+            </div>
+            <h3><%= teacher.name %></h3>
+            <p style="font-size: 14px; color: var(--edu-text-muted); margin-top: auto;">
+              Отзывов: <%= teacher.reviews.size %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

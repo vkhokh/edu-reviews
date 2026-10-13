@@ -222,3 +222,13 @@ a {
   white-space: nowrap;
   border: 0;
 }
+
+.auth-hint {
+  margin: -4px 0 0;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.auth-hint a {
+  text-decoration: underline;
+}

@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resource :registration, only: %i[new create]
   resource :session,      only: %i[new create destroy]
 
+  # --- Преподаватели ---
+  resources :teachers, only: %i[index new create]
+
   # --- Отзывы ---
   resources :reviews, only: %i[new create]
 

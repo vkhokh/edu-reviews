@@ -26,6 +26,7 @@
         <%= f.collection_select :teacher_id, @teachers, :id, :name,
               { prompt: "Выберите преподавателя" },
               { class: "auth-input", required: true } %>
+        <p class="auth-hint">Нет нужного преподавателя? <%= link_to "Добавить", new_teacher_path %></p>
 
         <%= f.label :rating, "Оценка", { class: "sr-only" } %>
         <%= f.select :rating,

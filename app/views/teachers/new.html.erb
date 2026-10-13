@@ -1,0 +1,41 @@
+<div class="auth-page">
+  <div class="auth-decor auth-decor-a"></div>
+  <div class="auth-decor auth-decor-b"></div>
+
+  <div class="auth-content">
+    <div class="auth-wordmark">EduReviews</div>
+
+    <div class="auth-card">
+      <div class="auth-card-header">
+        <h1>Добавить преподавателя</h1>
+        <p>Если его ещё нет в списке, добавь — и сразу оставь отзыв</p>
+      </div>
+
+      <% if @teacher.errors.any? %>
+        <div class="auth-errors">
+          <ul>
+            <% @teacher.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= form_with model: @teacher, url: teachers_path, local: true, class: "auth-form" do |f| %>
+        <%= f.label :name, "ФИО преподавателя", { class: "sr-only" } %>
+        <%= f.text_field :name, placeholder: "ФИО, например: Иванов И. И.",
+              class: "auth-input", required: true, maxlength: 150 %>
+
+        <%= f.label :department, "Кафедра / факультет", { class: "sr-only" } %>
+        <%= f.text_field :department, placeholder: "Кафедра или факультет, например: Мехмат",
+              class: "auth-input", required: true, maxlength: 150 %>
+
+        <%= f.submit "Добавить преподавателя →", class: "btn-primary" %>
+      <% end %>
+
+      <div class="auth-footer">
+        <%= link_to "← Назад к отзыву", new_review_path %>
+      </div>
+    </div>
+  </div>
+</div>
