@@ -1,0 +1,49 @@
+<div class="hero" style="padding-bottom: 0;">
+  <div class="container" style="position: relative; z-index: 1;">
+    <%= render "shared/header" %>
+  </div>
+</div>
+
+<div class="section" style="padding-top: 32px;">
+  <div class="container" style="max-width: 760px;">
+    <div class="section-heading">
+      <span class="badge badge-neutral"><%= @teacher.department %></span>
+      <h1 style="font-size: 36px;"><%= @teacher.name %></h1>
+    </div>
+
+    <% if @teacher.courses.any? %>
+      <div class="card review-card">
+        <h3>Курсы преподавателя</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <% @teacher.courses.order(:title).each do |course| %>
+            <%= link_to course.title, course_path(course), class: "tag", style: "text-decoration: none;" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <h2 style="font-size: 24px; margin: 40px 0 16px;">
+      Отзывы
+      <% if @teacher.average_rating %>
+        <span class="rating" style="margin-left: 8px;"><span class="rating-stars">★</span><%= @teacher.average_rating %> · <%= @reviews.size %></span>
+      <% end %>
+    </h2>
+
+    <% if logged_in? %>
+      <%= render "reviews/form_card", review: @review, field: :teacher_id, value: @teacher.id,
+            placeholder: "Что понравилось или не понравилось? Как объясняет материал, принимает экзамен, какая нагрузка?",
+            from: "teacher" %>
+    <% else %>
+      <p style="margin-bottom: 24px;">
+        <%= link_to "Войдите", new_session_path %>, чтобы оставить отзыв об этом преподавателе.
+      </p>
+    <% end %>
+
+    <%= render "reviews/list", reviews: @reviews, show_course: true,
+          empty_text: "Пока нет отзывов. Станьте первым!" %>
+
+    <div class="auth-footer" style="margin-top: 32px;">
+      <%= link_to "← Все преподаватели", teachers_path %>
+    </div>
+  </div>
+</div>

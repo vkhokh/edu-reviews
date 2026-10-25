@@ -1,8 +1,14 @@
 class TeachersController < ApplicationController
-  before_action :require_login, except: :index
+  before_action :require_login, except: %i[index show]
 
   def index
     @teachers = Teacher.includes(:reviews).order(:name)
+  end
+
+  def show
+    @teacher = Teacher.find(params[:id])
+    @reviews = @teacher.reviews.includes(:user, :course).order(created_at: :desc)
+    @review = Review.new
   end
 
   def new

@@ -1,0 +1,24 @@
+<%# Список отзывов. locals: reviews, empty_text, show_course (необязательно) %>
+<% if reviews.empty? %>
+  <p style="text-align: center; color: var(--edu-text-muted);"><%= empty_text %></p>
+<% else %>
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <% reviews.each do |review| %>
+      <div class="card review-card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span class="rating"><span class="rating-stars">★</span><%= review.rating %></span>
+          <span style="font-size: 13px; color: var(--edu-text-muted);"><%= review.created_at.strftime("%d.%m.%Y") %></span>
+        </div>
+        <% if review.difficulty %>
+          <span class="tag" style="align-self: flex-start;">Сложность: <%= review.difficulty_label %></span>
+        <% end %>
+        <% if local_assigns[:show_course] && review.course %>
+          <span class="badge badge-neutral" style="align-self: flex-start;">
+            Курс: <%= link_to review.course.title, course_path(review.course), style: "color: inherit; text-decoration: none;" %>
+          </span>
+        <% end %>
+        <p style="white-space: pre-line;"><%= review.body %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>

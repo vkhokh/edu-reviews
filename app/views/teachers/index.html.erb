@@ -29,10 +29,11 @@
                 <span style="font-size: 13px; color: var(--edu-text-muted);">нет оценок</span>
               <% end %>
             </div>
-            <h3><%= teacher.name %></h3>
+            <h3><%= link_to teacher.name, teacher_path(teacher), style: "color: inherit; text-decoration: none;" %></h3>
             <p style="font-size: 14px; color: var(--edu-text-muted); margin-top: auto;">
               Отзывов: <%= teacher.reviews.size %>
             </p>
+            <%= link_to "Смотреть отзывы →", teacher_path(teacher), style: "font-size: 13px; font-weight: 700;" %>
           </div>
         <% end %>
       </div>

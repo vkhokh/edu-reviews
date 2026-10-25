@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   resource :session,      only: %i[new create destroy]
 
   # --- Преподаватели ---
-  resources :teachers, only: %i[index new create]
+  resources :teachers, only: %i[index show new create]
+
+  # --- Курсы ---
+  resources :courses, only: %i[index show]
 
   # --- Отзывы ---
   resources :reviews, only: %i[new create]

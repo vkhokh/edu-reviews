@@ -1,0 +1,48 @@
+<div class="hero" style="padding-bottom: 0;">
+  <div class="container" style="position: relative; z-index: 1;">
+    <%= render "shared/header" %>
+  </div>
+</div>
+
+<div class="section" style="padding-top: 32px;">
+  <div class="container" style="max-width: 760px;">
+    <div class="section-heading">
+      <span class="badge badge-neutral"><%= @course.teacher.department %></span>
+      <h1 style="font-size: 36px;"><%= @course.title %></h1>
+      <% if @course.difficulty_label %>
+        <span class="tag">Сложность: <%= @course.difficulty_label %></span>
+      <% end %>
+      <p style="color: var(--edu-text-muted); font-size: 16px;">
+        Преподаватель: <%= link_to @course.teacher.name, teacher_path(@course.teacher) %>
+      </p>
+    </div>
+
+    <div class="card review-card">
+      <h3>О курсе</h3>
+      <p style="white-space: pre-line;"><%= @course.description %></p>
+    </div>
+
+    <h2 style="font-size: 24px; margin: 40px 0 16px;">
+      Отзывы
+      <% if @course.average_rating %>
+        <span class="rating" style="margin-left: 8px;"><span class="rating-stars">★</span><%= @course.average_rating %> · <%= @reviews.size %></span>
+      <% end %>
+    </h2>
+
+    <% if logged_in? %>
+      <%= render "reviews/form_card", review: @review, field: :course_id, value: @course.id,
+            placeholder: "Что понравилось или не понравилось в этом курсе?",
+            with_difficulty: true %>
+    <% else %>
+      <p style="margin-bottom: 24px;">
+        <%= link_to "Войдите", new_session_path %>, чтобы оставить отзыв об этом курсе.
+      </p>
+    <% end %>
+
+    <%= render "reviews/list", reviews: @reviews, empty_text: "Пока нет отзывов об этом курсе." %>
+
+    <div class="auth-footer" style="margin-top: 32px;">
+      <%= link_to "← Все курсы", courses_path %>
+    </div>
+  </div>
+</div>

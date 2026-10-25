@@ -54,4 +54,11 @@ class TeacherTest < ActiveSupport::TestCase
 
     assert_equal 4.5, teacher.average_rating
   end
+
+  test "has_many courses с dependent destroy" do
+    teacher = teachers(:abramyan)
+    assert_difference("Course.count", -1) do
+      teacher.destroy
+    end
+  end
 end

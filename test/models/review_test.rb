@@ -52,4 +52,28 @@ class ReviewTest < ActiveSupport::TestCase
     review = Review.new(valid_attributes.merge(teacher: nil))
     assert_not review.valid?
   end
+
+  # --- Сложность курса ---
+
+  test "для отзыва о курсе сложность обязательна" do
+    review = Review.new(user: users(:alice), teacher: teachers(:abramyan), course: courses(:calculus),
+                        rating: 4, body: "Хороший курс, много практики.")
+    assert_not review.valid?
+    assert_includes review.errors[:difficulty], "нужно выбрать"
+
+    review.difficulty = 2
+    assert review.valid?
+  end
+
+  test "сложность вне списка недопустима" do
+    review = Review.new(user: users(:alice), teacher: teachers(:abramyan), rating: 4,
+                        body: "Хороший преподаватель.", difficulty: 9)
+    assert_not review.valid?
+  end
+
+  test "отзыв о преподавателе без курса не требует сложности" do
+    review = Review.new(user: users(:alice), teacher: teachers(:abramyan), rating: 4,
+                        body: "Хороший преподаватель.")
+    assert review.valid?
+  end
 end

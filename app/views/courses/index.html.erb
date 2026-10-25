@@ -1,0 +1,35 @@
+<div class="hero" style="padding-bottom: 0;">
+  <div class="container" style="position: relative; z-index: 1;">
+    <%= render "shared/header" %>
+  </div>
+</div>
+
+<div class="section" style="padding-top: 32px;">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Каталог</div>
+      <h1 style="font-size: 36px;">Курсы</h1>
+      <p style="color: var(--edu-text-muted); font-size: 16px;">Предметы и преподаватели, которые их ведут</p>
+    </div>
+
+    <% if @courses.empty? %>
+      <p style="text-align: center; color: var(--edu-text-muted);">Курсов пока нет.</p>
+    <% else %>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px;">
+        <% @courses.each do |course| %>
+          <div class="card course-card">
+            <span class="badge badge-neutral" style="align-self: flex-start;"><%= course.teacher.department %></span>
+            <div>
+              <h3 style="margin-bottom: 6px;"><%= link_to course.title, course_path(course), style: "color: inherit; text-decoration: none;" %></h3>
+              <p style="font-size: 14px; color: var(--edu-text-muted);"><%= course.teacher.name %></p>
+            </div>
+            <% if course.difficulty_label %>
+              <div><span class="tag"><%= course.difficulty_label %></span></div>
+            <% end %>
+            <%= link_to "Подробнее →", course_path(course), style: "font-size: 13px; font-weight: 700; margin-top: auto;" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+calculus:
+  title: "Непрерывная математика"
+  description: "Пределы, ряды и элементы анализа."
+  teacher: abramyan
+
+analysis:
+  title: "Матанализ"
+  description: "Функции, производные, интегралы."
+  teacher: kozak

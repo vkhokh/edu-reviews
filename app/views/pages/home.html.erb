@@ -29,10 +29,6 @@
           <div class="hero-stat-value">3 200+</div>
           <div class="hero-stat-label">курсов</div>
         </div>
-        <div>
-          <div class="hero-stat-value">48</div>
-          <div class="hero-stat-label">университетов</div>
-        </div>
       </div>
     </div>
   </div>
@@ -43,76 +39,39 @@
     <div class="section-heading">
       <div class="eyebrow">Каталог</div>
       <h2 style="font-size: 32px;">Популярные курсы</h2>
-      <p style="color: var(--edu-text-muted); font-size: 16px;">То, что чаще всего ищут в этом семестре</p>
+      <p style="color: var(--edu-text-muted); font-size: 16px;">Курсы, о которых студенты пишут чаще всего</p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px;">
-
-      <div class="card course-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <span class="badge badge-neutral">Мехмат</span>
-          <span class="rating"><span class="rating-stars">★</span>4.8</span>
-        </div>
-        <div>
-          <h3 style="margin-bottom: 6px;">Непрерывная математика</h3>
-          <p style="font-size: 14px; color: var(--edu-text-muted);">Абрамян А. В.</p>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-          <span class="tag">Практика</span>
-          <span class="tag">Extra hard</span>
-        </div>
-        <%= link_to "312 отзывов →", "#", style: "font-size: 13px; font-weight: 700; margin-top: auto;" %>
+    <% if @courses.empty? %>
+      <p style="text-align: center; color: var(--edu-text-muted);">Курсов пока нет.</p>
+    <% else %>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px;">
+        <% @courses.each do |course| %>
+          <div class="card course-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <span class="badge badge-neutral"><%= course.teacher.department %></span>
+              <% if course.average_rating %>
+                <span class="rating"><span class="rating-stars">★</span><%= course.average_rating %></span>
+              <% else %>
+                <span style="font-size: 13px; color: var(--edu-text-muted);">нет оценок</span>
+              <% end %>
+            </div>
+            <div>
+              <h3 style="margin-bottom: 6px;"><%= link_to course.title, course_path(course), style: "color: inherit; text-decoration: none;" %></h3>
+              <p style="font-size: 14px; color: var(--edu-text-muted);"><%= course.teacher.name %></p>
+            </div>
+            <% if course.difficulty_label %>
+              <div><span class="tag"><%= course.difficulty_label %></span></div>
+            <% end %>
+            <%= link_to "Отзывов: #{course.reviews.size} →", course_path(course), style: "font-size: 13px; font-weight: 700; margin-top: auto;" %>
+          </div>
+        <% end %>
       </div>
 
-      <div class="card course-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <span class="badge badge-neutral">Мехмат</span>
-          <span class="rating"><span class="rating-stars">★</span>4.6</span>
-        </div>
-        <div>
-          <h3 style="margin-bottom: 6px;">Матанализ</h3>
-          <p style="font-size: 14px; color: var(--edu-text-muted);">Козак А. В.</p>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-          <span class="tag">Лекции</span>
-          <span class="tag">Extra hard</span>
-        </div>
-        <%= link_to "198 отзывов →", "#", style: "font-size: 13px; font-weight: 700; margin-top: auto;" %>
+      <div style="text-align: center; margin-top: 32px;">
+        <%= link_to "Все курсы →", courses_path, class: "btn-ghost" %>
       </div>
-
-      <div class="card course-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <span class="badge badge-neutral">Мехмат</span>
-          <span class="rating"><span class="rating-stars">★</span>4.1</span>
-        </div>
-        <div>
-          <h3 style="margin-bottom: 6px;">Языки программирования</h3>
-          <p style="font-size: 14px; color: var(--edu-text-muted);">Михалкович С. С.</p>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-          <span class="tag">Лекции</span>
-          <span class="tag">Medium</span>
-        </div>
-        <%= link_to "401 отзыв →", "#", style: "font-size: 13px; font-weight: 700; margin-top: auto;" %>
-      </div>
-
-      <div class="card course-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <span class="badge badge-neutral">Мехмат</span>
-          <span class="rating"><span class="rating-stars">★</span>4.9</span>
-        </div>
-        <div>
-          <h3 style="margin-bottom: 6px;">Теория алгоритмов</h3>
-          <p style="font-size: 14px; color: var(--edu-text-muted);">Ячменёва Н. А.</p>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-          <span class="tag">Лекции</span>
-          <span class="tag">Hard</span>
-        </div>
-        <%= link_to "156 отзывов →", "#", style: "font-size: 13px; font-weight: 700; margin-top: auto;" %>
-      </div>
-
-    </div>
+    <% end %>
   </div>
 </div>
 
@@ -181,7 +140,6 @@
       <div class="footer-heading">Платформа</div>
       <div class="footer-links">
         <%= link_to "О нас", "#" %>
-        <%= link_to "Для университетов", "#" %>
       </div>
     </div>
     <div>

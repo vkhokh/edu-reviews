@@ -1,0 +1,43 @@
+<%# Форма отзыва для страниц курса и преподавателя.
+    locals: review, field (скрытое поле: :course_id или :teacher_id), value, placeholder, from (необязательно), with_difficulty (true для курса) %>
+<div class="card review-card" style="margin-bottom: 24px;">
+  <h3>Оставить отзыв</h3>
+
+  <% if review.errors.any? %>
+    <div class="auth-errors">
+      <ul>
+        <% review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_with model: review, url: reviews_path, local: true, class: "auth-form" do |f| %>
+    <%= f.hidden_field field, value: value %>
+    <%= hidden_field_tag :from, local_assigns[:from] if local_assigns[:from] %>
+
+    <%= f.label :rating, "Оценка", { class: "sr-only" } %>
+    <%= f.select :rating,
+          options_for_select(
+            [["5 — отлично", 5], ["4 — хорошо", 4], ["3 — нормально", 3], ["2 — плохо", 2], ["1 — ужасно", 1]],
+            f.object.rating
+          ),
+          { prompt: "Оцените от 1 до 5" },
+          { class: "auth-input", required: true } %>
+
+    <% if review.course || local_assigns[:with_difficulty] %>
+      <%= f.label :difficulty, "Сложность курса", { class: "sr-only" } %>
+      <%= f.select :difficulty,
+            options_for_select(Review::DIFFICULTIES.map { |level, name| [name, level] }, f.object.difficulty),
+            { prompt: "Сложность курса" },
+            { class: "auth-input", required: true } %>
+    <% end %>
+
+    <%= f.label :body, "Текст отзыва", { class: "sr-only" } %>
+    <%= f.text_area :body, placeholder: placeholder,
+          class: "auth-input", rows: 5, required: true, minlength: 10 %>
+
+    <%= f.submit "Отправить отзыв →", class: "btn-primary" %>
+  <% end %>
+</div>

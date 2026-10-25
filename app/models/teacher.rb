@@ -3,6 +3,7 @@
 # Каталог курсов/преподавателей — отдельная будущая фича, сюда не входит.
 class Teacher < ApplicationRecord
   has_many :reviews, dependent: :destroy
+  has_many :courses, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 150 }
   validates :department, presence: true, length: { maximum: 150 }
