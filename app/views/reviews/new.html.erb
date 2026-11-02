@@ -23,19 +23,23 @@
 
       <%= form_with model: @review, url: reviews_path, local: true, class: "auth-form" do |f| %>
         <%= f.label :teacher_id, "Преподаватель", { class: "sr-only" } %>
-        <%= f.collection_select :teacher_id, @teachers, :id, :name,
-              { prompt: "Выберите преподавателя" },
-              { class: "auth-input", required: true } %>
+        <%= select_tag "review[teacher_id]",
+              options_for_select(
+                [["Выберите преподавателя", "", { disabled: true, hidden: true }]] +
+                  @teachers.map { |teacher| [teacher.name, teacher.id] },
+                f.object.teacher_id || ""
+              ),
+              id: "review_teacher_id", class: "auth-input", required: true %>
         <p class="auth-hint">Нет нужного преподавателя? <%= link_to "Добавить", new_teacher_path %></p>
 
         <%= f.label :rating, "Оценка", { class: "sr-only" } %>
-        <%= f.select :rating,
+        <%= select_tag "review[rating]",
               options_for_select(
-                [["5 — отлично", 5], ["4 — хорошо", 4], ["3 — нормально", 3], ["2 — плохо", 2], ["1 — ужасно", 1]],
-                f.object.rating
+                [["Оцените от 1 до 5", "", { disabled: true, hidden: true }],
+                 ["5 — отлично", 5], ["4 — хорошо", 4], ["3 — нормально", 3], ["2 — плохо", 2], ["1 — ужасно", 1]],
+                f.object.rating || ""
               ),
-              { prompt: "Оцените от 1 до 5" },
-              { class: "auth-input", required: true } %>
+              id: "review_rating", class: "auth-input", required: true %>
 
         <%= f.label :body, "Текст отзыва", { class: "sr-only" } %>
         <%= f.text_area :body, placeholder: "Что понравилось или не понравилось? Как объясняет материал, принимает экзамен, какая нагрузка?",

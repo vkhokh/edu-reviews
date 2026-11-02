@@ -9,6 +9,8 @@ class TeachersController < ApplicationController
     @teacher = Teacher.find(params[:id])
     @reviews = @teacher.reviews.includes(:user, :course).order(created_at: :desc)
     @review = Review.new
+    # Отзыв текущего пользователя о преподавателе (не о курсе), если он уже есть
+    @my_review = current_user&.reviews&.find_by(teacher: @teacher, course_id: nil) if Review.one_per_user?
   end
 
   def new

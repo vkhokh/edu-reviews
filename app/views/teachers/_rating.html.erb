@@ -1,0 +1,5 @@
+<span id="teacher_rating">
+  <% if teacher.average_rating %>
+    <span class="rating" style="margin-left: 8px;"><span class="rating-stars">★</span><%= teacher.average_rating %> · <%= teacher.reviews.count %></span>
+  <% end %>
+</span>

@@ -88,4 +88,39 @@ class ReviewBranchesTest < ActionDispatch::IntegrationTest
     end
     assert_response :unprocessable_entity
   end
+
+  # Ветка 5. Повторный отзыв: один пользователь — один отзыв о курсе.
+  test "второй отзыв о том же курсе не сохраняется, а вместо формы — сообщение" do
+    skip "ограничение «один отзыв» отключено в app/models/review.rb" unless Review.one_per_user?
+    course = courses(:calculus)
+    log_in_as users(:alice)
+    params = { review: { course_id: course.id, rating: 5, difficulty: 2, body: "Первый отзыв о курсе, всё понравилось." } }
+
+    post reviews_path, params: params
+    get course_path(course)
+    assert_select "h3", text: /Вы уже оставили отзыв об этом курсе/
+    assert_select "form[action=?]", reviews_path, count: 0
+
+    assert_no_difference "Review.count" do
+      post reviews_path, params: params
+    end
+    assert_response :unprocessable_entity
+    assert_select ".auth-errors li", text: /Вы уже оставили отзыв об этом курсе/
+  end
+
+  test "второй отзыв о том же преподавателе не сохраняется" do
+    skip "ограничение «один отзыв» отключено в app/models/review.rb" unless Review.one_per_user?
+    teacher = teachers(:kozak)
+    log_in_as users(:alice)
+    params = { from: "teacher", review: { teacher_id: teacher.id, rating: 4, body: "Строгий, но справедливый." } }
+
+    post reviews_path, params: params
+    get teacher_path(teacher)
+    assert_select "h3", text: /Вы уже оставили отзыв об этом преподавателе/
+
+    assert_no_difference "Review.count" do
+      post reviews_path, params: params
+    end
+    assert_response :unprocessable_entity
+  end
 end

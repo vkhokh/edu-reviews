@@ -1,0 +1,5 @@
+<span id="course_rating">
+  <% if course.average_rating %>
+    <span class="rating" style="margin-left: 8px;"><span class="rating-stars">★</span><%= course.average_rating %> · <%= course.reviews.count %></span>
+  <% end %>
+</span>

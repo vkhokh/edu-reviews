@@ -1,0 +1,11 @@
+<%# Вместо формы, если пользователь уже оставил отзыв. Лежит в том же Turbo Frame, что и форма.
+    locals: review (отзыв пользователя), about ("этом курсе" / "этом преподавателе") %>
+<%= turbo_frame_tag "new_review" do %>
+  <div class="card review-card" style="margin-bottom: 24px;">
+    <h3>Вы уже оставили отзыв об <%= about %></h3>
+    <p style="color: var(--edu-text-muted);">
+      Ваша оценка: <span class="rating"><span class="rating-stars">★</span><%= review.rating %></span>.
+      Можно оставить только один отзыв.
+    </p>
+  </div>
+<% end %>

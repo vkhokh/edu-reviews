@@ -4,6 +4,9 @@
   </div>
 </div>
 
+<%# Подписка на канал преподавателя: сюда сервер присылает Turbo Streams с новыми отзывами %>
+<%= turbo_stream_from @teacher %>
+
 <div class="section" style="padding-top: 32px;">
   <div class="container" style="max-width: 760px;">
     <div class="section-heading">
@@ -24,15 +27,13 @@
 
     <h2 style="font-size: 24px; margin: 40px 0 16px;">
       Отзывы
-      <% if @teacher.average_rating %>
-        <span class="rating" style="margin-left: 8px;"><span class="rating-stars">★</span><%= @teacher.average_rating %> · <%= @reviews.size %></span>
-      <% end %>
+      <%= render "teachers/rating", teacher: @teacher %>
     </h2>
 
-    <% if logged_in? %>
-      <%= render "reviews/form_card", review: @review, field: :teacher_id, value: @teacher.id,
-            placeholder: "Что понравилось или не понравилось? Как объясняет материал, принимает экзамен, какая нагрузка?",
-            from: "teacher" %>
+    <% if @my_review %>
+      <%= render "reviews/already_reviewed", review: @my_review, about: "этом преподавателе" %>
+    <% elsif logged_in? %>
+      <%= render "teachers/review_form", review: @review, teacher: @teacher %>
     <% else %>
       <p style="margin-bottom: 24px;">
         <%= link_to "Войдите", new_session_path %>, чтобы оставить отзыв об этом преподавателе.

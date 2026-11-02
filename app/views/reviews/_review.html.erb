@@ -1,0 +1,17 @@
+<%# Одна карточка отзыва. Рендерится в списке и при live-обновлении (Turbo Stream).
+    locals: review, show_course (необязательно) %>
+<div id="<%= dom_id(review) %>" class="card review-card">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <span class="rating"><span class="rating-stars">★</span><%= review.rating %></span>
+    <span style="font-size: 13px; color: var(--edu-text-muted);"><%= review.created_at.strftime("%d.%m.%Y") %></span>
+  </div>
+  <% if review.difficulty %>
+    <span class="tag" style="align-self: flex-start;">Сложность: <%= review.difficulty_label %></span>
+  <% end %>
+  <% if local_assigns[:show_course] && review.course %>
+    <span class="badge badge-neutral" style="align-self: flex-start;">
+      Курс: <%= link_to review.course.title, course_path(review.course), style: "color: inherit; text-decoration: none;" %>
+    </span>
+  <% end %>
+  <p style="white-space: pre-line;"><%= review.body %></p>
+</div>
