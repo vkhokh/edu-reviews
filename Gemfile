@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.1.3", ">= 8.1.3.1"
+gem "rails", "~> 8.1.4"
 
 # Закреплено вручную: json 3.0.x несовместим с тем, как activesupport 8.1.3.1
 # вызывает JSON.parse при расшифровке session-кук (ломает вход/flash на Windows).
